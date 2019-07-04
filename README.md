@@ -18,10 +18,20 @@ The Dockerfile source is maintained on GitHub also: https://github.com/liferay/l
 
 ##### Currently 6.x versions seem to be EE only and thus require a license
 
+Wait, the file https://github.com/liferay/liferay-docker/blob/master/build_all_images.sh defines, which Version uses EE or CE. If one needs 6.x, there is `6.2.5-ga6`:
+
+```
+releases.liferay.com/portal/6.2.5-ga6/liferay-portal-tomcat-6.2-ce-ga6-20160112152609836.zip
+```
+
+Therefore let's try to use:
+
 ```
 # 6.x
-docker run -it -p 8080:8080 liferay/portal:6.2.10.21
+docker run -it -p 8080:8080 liferay/portal:6.2.5-ga6-201905012238
 ```
+
+And voilà, having a look at http://localhost:8080/user/test/home should give you (after some configuration) a nice fully working CE version of Liferay.
 
 ##### 7.x 
 
